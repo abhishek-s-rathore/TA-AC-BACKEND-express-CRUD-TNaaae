@@ -1,32 +1,30 @@
 const express = require('express');
-const mongoose = require('mongoose');
-const path = require('path');
+// const mongoose = require('mongoose');
 
-mongoose.connect(
-  'mongobd://localhost/school',
-  { useNewUrlParser: true, useUnifiedTopology: true },
-  (err) => {
-    console.log(err ? err : 'Connected to database.');
-  }
-);
+// mongoose.connect(
+//   'mongobd://localhost/school',
+//   { useNewUrlParser: true, useUnifiedTopology: true },
+//   (err) => {
+//     console.log(err ? err : 'Connected to database.');
+//   }
+// );
 
 let app = express();
 
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, '/views'));
+app.set('views', __dirname + '/views');
 
 app.use((req, res, next) => {
-  res.locals = {
-    users: {
-      name: 'Abhishek',
-    },
+  res.locals.user = {
+    name: 'Abhishek',
   };
+  next();
 });
 
 app.get('/', (req, res) => {
   res.render('index');
 });
 
-app.listen(3333, 'localhost', () => {
-  console.log(`Server connected to port 3333!`);
+app.listen(3344, 'localhost', () => {
+  console.log(`Server connected to port 3344!`);
 });
