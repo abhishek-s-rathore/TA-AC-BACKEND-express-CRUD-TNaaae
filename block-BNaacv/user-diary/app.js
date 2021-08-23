@@ -2,7 +2,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
-var userRoutes = require('./routes/user');
+var usersRouter = require('./routes/user');
 
 // Connecting to MongoDB
 mongoose.connect(
@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
-app.use('/users', userRoutes);
+app.use('/users', usersRouter);
 
 // Handling error middlewares
 app.use((req, res) => {
