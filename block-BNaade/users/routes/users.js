@@ -1,6 +1,5 @@
 const express = require('express');
 let router = express.Router();
-
 var User = require('../models/user');
 
 router.get('/', (req, res, next) => {
@@ -50,3 +49,5 @@ router.post('/:id', (req, res, next) => {
 });
 
 module.exports = router;
+
+// Completed
