@@ -37,8 +37,9 @@ Handle these pages:
 - should be able to create a new user and save it to database
 - take us to new user's details page which has been recently created using create form.
 
-4. Update user form
 
+
+4. Update user form
 - when we click on edit button in user's details page
 - update form should be rendered
 - once update form is submitted, user should be updated
